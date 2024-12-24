@@ -5,6 +5,16 @@ const container = document.querySelector(".container");
 // Variables
 let squaresNumber = 16;
 
+alert(`
+    Welcome to the Etch a Sketch project!
+
+    Move over the squares to make a random color.
+
+    Click on a square to delete the color.
+
+    Click on the 'Number of Squares' and enter the squares you want (max 100),
+    Bear in mind that you might experience slows as you increase the number of the squares.
+`)
 function createGrid(size) {
     container.innerHTML = "";
 
