@@ -8,13 +8,24 @@ for (let i = 0; i < 16; i++) {
     }
 }
 
-container.addEventListener("mouseover", (event) => {
-    let target = event.target.closest(".gridBox");
-    target.style.backgroundColor =
-        "#" +
-        Math.floor(Math.random() * 16777215)
-            .toString(16)
-            .padStart(6, "0");
+// helper function to add Event delegation
+function addGlobalEventListener(type, selector, callback, parent = document) {
+    parent.addEventListener(type, (e) => {
+        if (e.target.matches(selector)) {
+            callback(e);
+        }
+    });
+}
 
-    // target.classList.add('active');
-});
+addGlobalEventListener(
+    "mouseover",
+    ".gridBox",
+    (e) => {
+        e.target.style.backgroundColor =
+            "#" +
+            Math.floor(Math.random() * 16777215)
+                .toString(16)
+                .padStart(6, "0");
+    },
+    container
+);

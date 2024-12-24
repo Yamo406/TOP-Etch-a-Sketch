@@ -1,6 +1,7 @@
 :root {
     --background: #4f5763;
     --foreground: #fff;
+    --black: #000;
     --box: #06a6d6;
     --hover: #deb009;
     --container: #0e2082;
@@ -22,22 +23,23 @@ body {
 }
 
 .container {
-    background-color: var(--container);
+    background-color: var(--foreground);
     padding: 0;
     margin: 0;
-    border-radius: 2em;
+    border-radius: 8px;
     display: flex;
     flex-flow: wrap;
+    flex-grow: 1;
     margin: 5em;
     padding: 1em;
     gap: 2px;
 }
 
 .gridBox{
-    background-color: var(--box);
+    background-color: var(--foreground);
     width: 60px;
     height: 60px;
-    border: var(--foreground) 1px solid;
+    border: var(--black) 1px solid;
     border-radius: 8px;
 }
 
