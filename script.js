@@ -9,7 +9,7 @@ let squaresNumber = 16;
 squareButton.addEventListener("click", (e) => {
     e.preventDefault();
     squaresNumber = Number(prompt(
-        "Enter the Number of squares you want per side (max 100)"
+        "Enter the Number of squares you want per side (max 100)", 16
     ));
     if (squaresNumber > 100) {
         alert("Can't have more than 100 squares per side");

@@ -13,8 +13,6 @@
 }
 
 body {
-    /* display: flex; */
-    /* flex-flow: column; */
     background-color: var(--background);
     margin: 0;
     padding: 0;
@@ -28,15 +26,11 @@ body {
 
 .container {
     background-color: var(--foreground);
-    padding: 0;
-    margin: 0;
     border-radius: 12px;
     display: flex;
     flex-flow: wrap;
     flex: 1;
-    margin: 5em;
     padding: 1em;
-    /* gap: 2px; */
 }
 
 .gridSquare {
@@ -59,12 +53,16 @@ button {
     background-color: var(--foreground);
     padding: 12px;
     border-radius: 8px;
-    border: 2px solid var(--black);
+    border: none;
     transition: .25s;
 }
 
 button:hover{
     color: var(--foreground);
     background-color: var(--black);
-    border: 2px solid var(--foreground);
+}
+
+.buttonContainer{
+    display: flex;
+    justify-content: center;
 }
