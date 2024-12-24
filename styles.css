@@ -18,7 +18,7 @@ body {
     padding: 0;
     min-height: 100vh;
 }
-.app{
+.app {
     display: flex;
     flex-flow: column;
     padding: 0 5%;
@@ -29,14 +29,17 @@ body {
     border-radius: 12px;
     display: flex;
     flex-flow: wrap;
-    flex: 1;
-    padding: 1em;
+    aspect-ratio: 1 / 1;
+    width: min(90vw, 960px);
+    margin: 0 auto;
+    padding: 0;
 }
 
 .gridSquare {
     background-color: var(--foreground);
-    width: 60px;
-    height: 60px;
+    width: calc(100% / var(--grid-size));
+    height: calc(100% / var(--grid-size));
+    box-sizing: border-box;
     border: var(--black) 1px solid;
 }
 
@@ -54,15 +57,16 @@ button {
     padding: 12px;
     border-radius: 8px;
     border: none;
-    transition: .25s;
+    cursor: pointer;
+    transition: 0.25s;
 }
 
-button:hover{
+button:hover {
     color: var(--foreground);
     background-color: var(--black);
 }
 
-.buttonContainer{
+.buttonContainer {
     display: flex;
     justify-content: center;
 }
