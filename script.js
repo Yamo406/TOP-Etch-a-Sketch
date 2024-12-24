@@ -1,9 +1,27 @@
-// create the boxes
+//Constant Variables
+const squareButton = document.querySelector("#numberOfSquares");
 const container = document.querySelector(".container");
-for (let i = 0; i < 16; i++) {
-    for (let j = 0; j < 16; j++) {
+
+// Variables
+let squaresNumber = 16;
+
+// square numbers button
+squareButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    squaresNumber = Number(prompt(
+        "Enter the Number of squares you want per side (max 100)"
+    ));
+    if (squaresNumber > 100) {
+        alert("Can't have more than 100 squares per side");
+        squaresNumber = 16;
+    }
+});
+
+// create the squares
+for (let i = 0; i < squaresNumber; i++) {
+    for (let j = 0; j < squaresNumber; j++) {
         const div = document.createElement("div");
-        div.classList.add("gridBox");
+        div.classList.add("gridSquare");
         container.appendChild(div);
     }
 }
@@ -19,7 +37,7 @@ function addGlobalEventListener(type, selector, callback, parent = document) {
 
 addGlobalEventListener(
     "mouseover",
-    ".gridBox",
+    ".gridSquare",
     (e) => {
         e.target.style.backgroundColor =
             "#" +
